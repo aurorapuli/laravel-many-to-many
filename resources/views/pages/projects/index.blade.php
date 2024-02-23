@@ -13,9 +13,11 @@
                 <div><b>Title: </b>{{ $project->title }}</div>
                 <div><b>Description: </b>{{ $project->description }}</div>
                 <div><b>Type: </b>{{ $project->type->languages }}</div>
-                @foreach ($project->technologies as $technology)
-                    <div><b>Technologies: </b>{{ $technology->name }}</div>
-                @endforeach
+                <div><b>Technologies: </b>
+                    @foreach ($project->technologies as $technology)
+                        {{ $technology->name }},
+                    @endforeach
+                </div>
 
                 <a href="{{ route('project.edit', $project->id) }}">
                     EDIT

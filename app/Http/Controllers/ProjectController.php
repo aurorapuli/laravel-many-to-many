@@ -57,4 +57,25 @@ class ProjectController extends Controller
 
         return view('pages.projects.edit', compact('types', 'technologies', 'project'));
     }
+
+    public function update(Request $request, $id) {
+
+        $data = $request -> all();
+
+        $type = Type :: find($data['type_id']);
+
+        $project = Project :: find($id);
+
+        $project -> title = $data['title'];
+        $project -> description = $data['description'];
+        $project -> img = $data['img'];
+
+        $project -> type() -> associate($type);
+
+        $project -> save();
+
+        $project -> technologies() -> sync($data['technology_id']);
+
+        return redirect() -> route('project.index');
+   }
 }
