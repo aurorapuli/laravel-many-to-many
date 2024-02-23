@@ -3,11 +3,11 @@
     <title>Home</title>
 @endsection
 @section('content')
-    <h1 class="mb-5">New Project</h1>
+    <h1 class="mb-5">Edit Project</h1>
     <form action="{{ route('project.index') }}" method="POST" class="text-start" style="margin: 0 auto; width: 600px">
 
         @csrf
-        @method('POST')
+        @method('PUT')
 
 
         <label style="width: 100px" for="title">Title</label>

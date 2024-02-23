@@ -45,10 +45,16 @@ class ProjectController extends Controller
 
          $project -> technologies() -> attach($data['technology_id']);
 
-
-
-
-
          return redirect() -> route('project.index');
+    }
+
+    public function edit($id) {
+
+        $project = Project :: find($id);
+
+        $types = Type :: all();
+        $technologies= Technology :: all();
+
+        return view('pages.projects.edit', compact('types', 'technologies', 'project'));
     }
 }

@@ -17,7 +17,9 @@
                     <div><b>Technologies: </b>{{ $technology->name }}</div>
                 @endforeach
 
-
+                <a href="{{ route('project.edit', $project->id) }}">
+                    EDIT
+                </a>
             </li>
         @endforeach
 
