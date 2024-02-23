@@ -5,6 +5,8 @@
 @section('content')
     <h1>Projects</h1>
 
+    <a href="{{ route('project.create') }}">CREATE</a>
+
     <ul class="d-flex justify-content-center flex-wrap">
         @foreach ($projects as $project)
             <li class="card text-start p-4 m-2" style="width: 500px">
