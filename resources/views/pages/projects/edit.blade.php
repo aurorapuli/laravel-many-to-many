@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <h1 class="mb-5">Edit Project</h1>
-    <form action="{{ route('project.update', $project->id) }}" method="POST" class="text-start"
+    <form action="{{ route('project.update', $project->id) }}" enctype="multipart/form-data" method="POST" class="text-start"
         style="margin: 0 auto; width: 600px">
 
         @csrf
@@ -17,8 +17,8 @@
         <label style="width: 100px" for="description">Description</label>
         <input type="text" name="description" id="description" value="{{ $project->description }}">
         <br>
-        <label style="width: 100px" for="img">Image</label>
-        <input type="text" name="img" id="img" value="{{ $project->img }}">
+        <label style="width: 100px" for="image">Image</label>
+        <input type="file" name="image" id="image" value="{{ $project->image }}" accept="image/png">
         <br>
         <label style="width: 100px">Type</label>
         <select name="type_id" id="type_id">

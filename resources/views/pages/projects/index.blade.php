@@ -10,6 +10,7 @@
     <ul class="d-flex justify-content-center flex-wrap">
         @foreach ($projects as $project)
             <li class="card text-start p-4 m-2" style="width: 500px">
+                <img src="{{ asset('storage/' . $project->image) }}" alt="" width="300px">
                 <div><b>Title: </b>{{ $project->title }}</div>
                 <div><b>Description: </b>{{ $project->description }}</div>
                 <div><b>Type: </b>{{ $project->type->languages }}</div>

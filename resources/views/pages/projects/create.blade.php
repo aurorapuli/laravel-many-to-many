@@ -4,7 +4,8 @@
 @endsection
 @section('content')
     <h1 class="mb-5">New Project</h1>
-    <form action="{{ route('project.index') }}" method="POST" class="text-start" style="margin: 0 auto; width: 600px">
+    <form action="{{ route('project.index') }}" enctype="multipart/form-data" method="POST" class="text-start"
+        style="margin: 0 auto; width: 600px">
 
         @csrf
         @method('POST')
@@ -16,8 +17,8 @@
         <label style="width: 100px" for="description">Description</label>
         <input type="text" name="description" id="description">
         <br>
-        <label style="width: 100px" for="img">Image</label>
-        <input type="text" name="img" id="img">
+        <label style="width: 100px" for="image">Image</label>
+        <input type="file" name="image" id="image" accept="image/png">
         <br>
         <label style="width: 100px">Type</label>
         <select name="type_id" id="type_id">

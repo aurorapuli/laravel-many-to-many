@@ -19,7 +19,7 @@ class ProjectFactory extends Factory
         return [
             "title" => fake() -> words(3, true),
             "description" => fake() -> sentence(),
-            "img" => fake() -> imageUrl(360, 360, 'animals', true, 'cats'),
+            "image" => null,
         ];
     }
 }
