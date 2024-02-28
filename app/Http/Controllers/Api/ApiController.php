@@ -11,9 +11,12 @@ class ApiController extends Controller
 {
    public function index() {
 
-    return  response()->json([
-        'status'=> 'succes',
-        'message' => 'Questo è un messagio',
+    $technologies = Technology :: all();
+
+    return response()->json([
+
+        'status' => 'success',
+        'technologies' => $technologies
 
     ]);
    }
