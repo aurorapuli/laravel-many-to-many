@@ -4,8 +4,8 @@
 @endsection
 @section('content')
     <h1 class="mb-5">New Project</h1>
-    <form action="{{ route('project.index') }}" enctype="multipart/form-data" method="POST" class="text-start"
-        style="margin: 0 auto; width: 600px">
+    <form action="{{ route('project.index') }}" method="POST" class="text-start" style="margin: 0 auto; width: 600px"
+        enctype="multipart/form-data">
 
         @csrf
         @method('POST')
