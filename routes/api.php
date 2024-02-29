@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route :: group(['prefix' => '/v1'], function() {
 
     Route :: get('index', [ ApiController :: class, 'index']);
+    Route :: post('index', [ ApiController :: class, 'create']);
 
 
 });
